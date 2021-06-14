@@ -5,11 +5,12 @@ from datetime import datetime, timezone
 from core_model.models import Appointment
 from .serializers import AppointmentSerializer
 from .tasks import generate_billing
+from decimal import *
 
 
 class AppointmentsViewSet(viewsets.ModelViewSet):
     """
-    API Appointments: Method GET, POST, PUT, DELETE
+    API Appointments: Method GET, POST, PUT, PATCH, DELETE
     """
     queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
@@ -20,11 +21,15 @@ class AppointmentsViewSet(viewsets.ModelViewSet):
     @action(methods=['put'], detail=True)
     def finish(self, request, *args, **kwargs):
         appointment = self.get_object()
-        appointment.end_date = datetime.now(tz=timezone.utc)
-        appointment.save()
-        value_appointment = self.calc_value_appointment(appointment)
-        generate_billing.delay(appointment=str(appointment.id), value=str(value_appointment))
-        return Response('Appointment finished.', status=status.HTTP_204_NO_CONTENT)
+        if not appointment.end_date:
+            appointment.end_date = datetime.now(tz=timezone.utc)
+            appointment.save()
+            serializer = AppointmentSerializer(appointment)
+            value_appointment = self.calc_value_appointment(appointment)
+            generate_billing.delay(appointment=str(appointment.id), value=str(value_appointment))
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response('Appointment already finished.', status=status.HTTP_400_BAD_REQUEST)
 
     def calc_value_appointment(self, appointment):
         """
@@ -34,7 +39,8 @@ class AppointmentsViewSet(viewsets.ModelViewSet):
         hours = total_seconds // 3600
         minutes = (total_seconds // 60) % 60
         value = appointment.price
-        price_minute_mod = (value // 60)
+        getcontext().prec = 3
+        price_minute_mod = Decimal(value) / Decimal(60)
         if hours:
             value = (value * int(hours)) + (price_minute_mod * int(minutes))
         return value

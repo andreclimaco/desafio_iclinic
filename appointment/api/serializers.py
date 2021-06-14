@@ -8,5 +8,6 @@ class AppointmentSerializer(serializers.ModelSerializer):
         model = Appointment
         fields = '__all__'
         read_only_fields = (
-            "id",
+            'id',
+            'end_date'
         )

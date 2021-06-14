@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-5(*63trgs!s0*7n-hv@67fftsy8@dgsbua@=0&l7$(2*1yyf9r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['charge-api']
+ALLOWED_HOSTS = ['charge-api', 'localhost']
 
 CORS_ORIGIN_ALLOW_ALL = True
 

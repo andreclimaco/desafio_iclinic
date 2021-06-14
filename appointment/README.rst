@@ -40,8 +40,6 @@ Endpoints
 
 A api  disponibiliza dois endpoints:
 
-- /api/v1/appointments/
-- /api/v1/appointments/{id}/finish/
 
 /api/v1/appointments/
 ^^^^^^^^^^^^^^^^^^^^^

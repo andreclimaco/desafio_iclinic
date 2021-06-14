@@ -8,6 +8,13 @@ API de consultas.
 Instruções
 **********
 
+Executar testes
+===============
+
+:: 
+
+$ python manage.py test -v 2
+
 Iniciar
 ========
 

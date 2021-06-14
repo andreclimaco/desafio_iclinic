@@ -8,6 +8,13 @@ API de cobranças.
 Instruções
 **********
 
+Executar testes
+===============
+
+:: 
+
+$ python manage.py test -v 2
+
 Iniciar
 ========
 

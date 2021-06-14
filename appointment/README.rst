@@ -49,7 +49,7 @@ GET
 
 :: 
 
-$ curl -H "Content-Type: application/json" GET http://localhost:8000/api/v1/appointments/
+$ curl -X GET http://localhost:8000/api/v1/appointments/
 
 
 POST

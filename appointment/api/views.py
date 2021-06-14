@@ -18,7 +18,7 @@ class AppointmentsViewSet(viewsets.ModelViewSet):
     ordering_fields = '__all__'
     # permission_classes = (permissions.DjangoModelPermissions,)
 
-    @action(methods=['put'], detail=True)
+    @action(methods=['put', 'get'], detail=True)
     def finish(self, request, *args, **kwargs):
         appointment = self.get_object()
         if not appointment.end_date:
@@ -26,7 +26,8 @@ class AppointmentsViewSet(viewsets.ModelViewSet):
             appointment.save()
             serializer = AppointmentSerializer(appointment)
             value_appointment = self.calc_value_appointment(appointment)
-            generate_billing.delay(appointment=str(appointment.id), value=str(value_appointment))
+            generate_billing.delay(appointment=str(
+                appointment.id), value=str(value_appointment))
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
             return Response('Appointment already finished.', status=status.HTTP_400_BAD_REQUEST)
@@ -35,7 +36,8 @@ class AppointmentsViewSet(viewsets.ModelViewSet):
         """
         Calculate the value of the medical appointment
         """
-        total_seconds = (appointment.end_date - appointment.start_date).total_seconds()
+        total_seconds = (appointment.end_date -
+                         appointment.start_date).total_seconds()
         hours = total_seconds // 3600
         minutes = (total_seconds // 60) % 60
         value = appointment.price

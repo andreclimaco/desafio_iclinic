@@ -1,6 +1,6 @@
-##########
-Consulta
-##########
+############
+Consulta API
+############
 
 API de consultas.
 

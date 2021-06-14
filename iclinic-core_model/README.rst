@@ -21,7 +21,7 @@ $ python manage.py test -v 2
 Gerar distribuição
 ==================
 
-Para adicionar, uma nova versão, aos projetos appointment e charge execute os comandos:
+Para adicionar aos projetos appointment e charge, uma nova versão do core_model, execute os comandos:
 
 ::
 

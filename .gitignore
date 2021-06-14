@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 
 .idea/
+htmlcov/
+postgresql-data/
+redis_data/

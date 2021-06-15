@@ -51,8 +51,8 @@ Pré-requisitos
 __ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 __ https://docs.docker.com/compose/install/
 
-Clone repositório
------------------
+Clone o repositório
+-------------------
 
 ::
 

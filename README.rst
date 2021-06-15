@@ -134,7 +134,7 @@ Acesse
 
 `Detalhamento da API.`__
 
-__ <appointment/README.rst>
+__ appointment/README.rst#endpoints
 
 .. image:: docs/screenshot/api-consultas.png
   :alt: API de Consultas

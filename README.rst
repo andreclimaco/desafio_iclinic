@@ -74,9 +74,9 @@ Execute o Docker Compose
 $ docker-compose build
 $ docker-compose up -d
 
-==========
-**Testes**
-==========
+============
+**Testando**
+============
 
 API de consultas
 ----------------
@@ -93,9 +93,9 @@ API de cobranças
 $ docker-compose run --rm charge-api python manage.py test -v 2
 
 
-===========================
-**Acessando as aplicações**
-===========================
+=============
+**Acessando**
+=============
 
 
 **Administração do Django**
@@ -130,11 +130,13 @@ Acesse
 **API de Consultas**
 --------------------
 
-- http://localhost:8000/api/v1/appointments/
-
-`Detalhamento da API.`__
+`Detalhamento da API de Consultas`__
 
 __ appointment/README.rst#endpoints
+
+
+- http://localhost:8000/api/v1/appointments/
+
 
 .. image:: docs/screenshot/api-consultas.png
   :alt: API de Consultas
@@ -143,7 +145,23 @@ __ appointment/README.rst#endpoints
 **API de Cobranças**
 --------------------
 
+`Detalhamento da API de Cobranças`__
+
+__ charge/README.rst#endpoints
+
 - http://localhost:9000/api/v1/charges/
+
+
 
 .. image:: docs/screenshot/api-cobrancas.png
   :alt: API de Consultas
+
+
+==========
+**Extras**
+==========
+
+- `Core Model`__
+
+__ iclinic_core_model/README.rst
+

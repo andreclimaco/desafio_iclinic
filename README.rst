@@ -162,6 +162,50 @@ __ charge/README.rst#endpoints
 ==========
 
 - `Core Model`__
+- Dados iniciais
 
 __ iclinic-core_model/README.rst
 
+Dados iniciais
+--------------
+
+.. list-table:: Paciente
+    :widths: 50 25 25
+    :header-rows: 1
+
+    * - id
+      - last_name
+      - first_name
+    * - 01fcc220-49ee-4b9c-8a9a-0d5ea9a4293f 
+      - Orane
+      - Brousse
+    * - 186718d0-97bb-4cf8-bfca-07e3f51b6f94
+      - Tanguy
+      - Barrette
+    * - 44e56506-4ffe-4ab5-ab4f-3b31a4c88716
+      - Loyal
+      - Dubé
+    * - 492ade75-58cf-404a-8ebe-8fcc601fb612
+      - Émilie
+      - Angélil
+    * - 6ce6f569-6f5f-4a71-ab4b-f5caa0709ff0
+      - Gabriel
+      - Baril
+    * - 7033474d-42a9-40d0-8a99-af727b2f93cb
+      - Avice
+      - Charpentier
+    * - 826c8276-70c4-41fc-a81b-722983c47020
+      - Troy
+      - Cloutier
+    * - 88a2a7d1-16f4-4f2f-b635-8adc70478770
+      - Harbin
+      - Viens
+    * - 9518b7e1-b185-4d49-aaf5-f19a7c0b3c27
+      - Alita
+      - Boucher
+    * - 954086a0-324a-4441-99d0-a61bb17a2bcd
+      - Pomeroy
+      - Pirouet
+    * - b21e20fd-2e5f-48bb-a7bf-c439f882cb1a
+      - Annette
+      - Hoenderdos

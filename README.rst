@@ -162,14 +162,15 @@ __ charge/README.rst#endpoints
 ==========
 
 - `Core Model`__
-- Dados iniciais
+- `Dados iniciais`__
 
 __ iclinic-core_model/README.rst
+__ #dados-iniciais
 
 Dados iniciais
 --------------
 
-.. list-table:: Paciente
+.. list-table:: Pacientes
     :widths: 50 25 25
     :header-rows: 1
 
@@ -209,3 +210,24 @@ Dados iniciais
     * - b21e20fd-2e5f-48bb-a7bf-c439f882cb1a
       - Annette
       - Hoenderdos
+
+
+.. list-table:: Medicos
+    :widths: 50 25 25
+    :header-rows: 1
+
+    * - id
+      - last_name
+      - first_name
+    * - b21e20fd-2e5f-48bb-a7bf-c439f882cb1a
+      - Annette
+      - Hoenderdos
+    * - cf59267c-f4a4-4bee-abbb-c02af82dda89
+      - Annefloor
+      - Nooren
+    * - d4feda94-cf49-4580-abe9-21fb02a9d5db
+      - Raoul
+      - Karel
+    * - f7be9652-b0cb-4fc5-ad03-8ea0f20449ba
+      - Yoni
+      - Vianen

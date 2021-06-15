@@ -93,9 +93,13 @@ API de cobranças
 $ docker-compose run --rm charge-api python manage.py test -v 2
 
 
-=======================================
-**Acessando a Administração do Django**
-=======================================
+===========================
+**Acessando as aplicações**
+===========================
+
+
+**Administração do Django**
+----------------------------
 
 .. image:: docs/screenshot/django-admin-login.png
   :alt: Login Django Admin
@@ -122,3 +126,24 @@ Acesse
 
 .. image:: docs/screenshot/django-admin.png
   :alt: Django Admin
+
+**API de Consultas**
+--------------------
+
+- http://localhost:8000/api/v1/appointments/
+
+`Detalhamento da API.`__
+
+__ <appointment/README.rst>
+
+.. image:: docs/screenshot/api-consultas.png
+  :alt: API de Consultas
+
+
+**API de Cobranças**
+--------------------
+
+- http://localhost:9000/api/v1/charges/
+
+.. image:: docs/screenshot/api-cobrancas.png
+  :alt: API de Consultas

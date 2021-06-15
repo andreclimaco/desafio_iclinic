@@ -16,15 +16,21 @@ Ferramentas utilizadas:
 
 - `Django REST framework`__
 - `PostgreSQL`__
-- `RabbitMQ <link https://www.rabbitmq.com/documentation.html>`__
-- `Celery <link https://docs.celeryproject.org/en/stable/>`__
-- `Flower <link https://flower.readthedocs.io/en/latest/>`__
-- `Redis <link https://redis.io/documentation>`__
-- `Docker <link https://docs.docker.com/>`__
-- `Docker Compose <link https://docs.docker.com/compose/>`__
+- `RabbitMQ`__
+- `Celery`__
+- `Flower`__
+- `Redis`__
+- `Docker`__
+- `Docker Compose`__
 
 __ https://www.django-rest-framework.org
 __ https://www.postgresql.org/docs/
+__ https://www.rabbitmq.com/documentation.html
+__ https://docs.celeryproject.org/en/stable/
+__ https://flower.readthedocs.io/en/latest/
+__ https://redis.io/documentation
+__ https://docs.docker.com/
+__ https://docs.docker.com/compose/
 
 
 .. image:: docs/desafio_iclinic.png

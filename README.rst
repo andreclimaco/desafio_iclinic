@@ -15,7 +15,7 @@ Solução
 Ferramentas utilizadas:
 
 - `Django REST framework`__
-- `PostgreSQL <link https://www.postgresql.org/docs/>`__
+- `PostgreSQL`__
 - `RabbitMQ <link https://www.rabbitmq.com/documentation.html>`__
 - `Celery <link https://docs.celeryproject.org/en/stable/>`__
 - `Flower <link https://flower.readthedocs.io/en/latest/>`__
@@ -24,6 +24,7 @@ Ferramentas utilizadas:
 - `Docker Compose <link https://docs.docker.com/compose/>`__
 
 __ https://www.django-rest-framework.org
+__ https://www.postgresql.org/docs/
 
 
 .. image:: docs/desafio_iclinic.png

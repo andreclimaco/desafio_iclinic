@@ -163,5 +163,5 @@ __ charge/README.rst#endpoints
 
 - `Core Model`__
 
-__ iclinic_core_model/README.rst
+__ iclinic-core_model/README.rst
 

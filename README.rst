@@ -44,8 +44,11 @@ __ https://docs.docker.com/compose/
 
 Pré-requisitos
 --------------
-- `Git <link https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`__
-- `Docker compose <link https://docs.docker.com/compose/install/>`__
+- `Git`__
+- `Docker compose`__
+
+__ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+__ https://docs.docker.com/compose/install/
 
 Clone repositório
 -----------------

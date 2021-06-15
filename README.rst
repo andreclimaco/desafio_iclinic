@@ -36,6 +36,7 @@ __ https://docs.docker.com/compose/
 
 
 .. image:: docs/desafio_iclinic.png
+  :width: 600
   :alt: Proposta de solução
 
 =================
@@ -102,6 +103,7 @@ $ docker-compose run --rm charge-api python manage.py test -v 2
 ----------------------------
 
 .. image:: docs/screenshot/django-admin-login.png
+  :width: 600
   :alt: Login Django Admin
 
 Pré-requisitos
@@ -125,6 +127,7 @@ Acesse
 - http://localhost:9000/admin/
 
 .. image:: docs/screenshot/django-admin.png
+  :width: 600
   :alt: Django Admin
 
 **API de Consultas**
@@ -139,6 +142,7 @@ __ appointment/README.rst#endpoints
 
 
 .. image:: docs/screenshot/api-consultas.png
+  :width: 600
   :alt: API de Consultas
 
 
@@ -152,10 +156,18 @@ __ charge/README.rst#endpoints
 - http://localhost:9000/api/v1/charges/
 
 
-
 .. image:: docs/screenshot/api-cobrancas.png
+  :width: 600
   :alt: API de Consultas
 
+
+**Flower**
+----------
+- http://localhost:5555
+
+.. image:: docs/screenshot/flower.png
+  :width: 600
+  :alt: API de Consultas
 
 ==========
 **Extras**

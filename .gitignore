@@ -131,4 +131,4 @@ dmypy.json
 .idea/
 htmlcov/
 postgresql-data/
-redis_data/
+redis-data/

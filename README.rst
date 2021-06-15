@@ -6,7 +6,9 @@ iClinic Teste SRE Arquiteto
 Problema
 ########
 
-`Acesse aqui a descrição do problema. <link https://gist.github.com/rbouchabki/1c1e9826cbb6282c7ffd77703183f8f3>`__
+`Acesse aqui a descrição do problema.`__
+
+__ https://gist.github.com/rbouchabki/1c1e9826cbb6282c7ffd77703183f8f3
 
 
 Solução

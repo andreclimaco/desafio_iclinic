@@ -1,7 +1,6 @@
 version: "3.8"
 
 services:
-
     postgres:
         container_name: postgres
         hostname: postgres
@@ -27,7 +26,7 @@ services:
         ports:
             - "6379:6379"
         volumes:
-            - ./redis_data:/data
+            - ./redis-data:/data
         restart: on-failure
 
     rabbitmq:
@@ -35,9 +34,9 @@ services:
         hostname: rabbitmq
         image: rabbitmq:latest
         networks:
-          - main
+            - main
         ports:
-          - "5672:5672"
+            - "5672:5672"
         restart: on-failure
 
     appointment-api:
@@ -45,10 +44,10 @@ services:
         hostname: appointment-api
         image: appointment-api-image
         depends_on:
-          - postgres
-          - rabbitmq
-          - charge-api
-          - redis
+            - postgres
+            - rabbitmq
+            - charge-api
+            - redis
         build:
             context: ./appointment
         networks:
@@ -107,7 +106,7 @@ services:
         hostname: charge-api
         image: charge-api-image
         depends_on:
-          - postgres
+            - postgres
         build:
             context: ./charge
         networks:
@@ -128,7 +127,3 @@ services:
 
 networks:
     main:
-
-#volumes:
-#    postgresql-data:
-#    redis_data:

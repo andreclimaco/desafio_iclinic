@@ -1,0 +1,114 @@
+[
+{
+  "model": "core_model.patient",
+  "pk": "01fcc220-49ee-4b9c-8a9a-0d5ea9a4293f",
+  "fields": {
+    "first_name": "Orane",
+    "last_name": "Brousse"
+  }
+},
+{
+  "model": "core_model.patient",
+  "pk": "186718d0-97bb-4cf8-bfca-07e3f51b6f94",
+  "fields": {
+    "first_name": "Tanguy",
+    "last_name": "Barrette"
+  }
+},
+{
+  "model": "core_model.patient",
+  "pk": "44e56506-4ffe-4ab5-ab4f-3b31a4c88716",
+  "fields": {
+    "first_name": "Loyal",
+    "last_name": "Dubé"
+  }
+},
+{
+  "model": "core_model.patient",
+  "pk": "492ade75-58cf-404a-8ebe-8fcc601fb612",
+  "fields": {
+    "first_name": "Émilie",
+    "last_name": "Angélil"
+  }
+},
+{
+  "model": "core_model.patient",
+  "pk": "6ce6f569-6f5f-4a71-ab4b-f5caa0709ff0",
+  "fields": {
+    "first_name": "Gabriel",
+    "last_name": "Baril"
+  }
+},
+{
+  "model": "core_model.patient",
+  "pk": "7033474d-42a9-40d0-8a99-af727b2f93cb",
+  "fields": {
+    "first_name": "Avice",
+    "last_name": "Charpentier"
+  }
+},
+{
+  "model": "core_model.patient",
+  "pk": "826c8276-70c4-41fc-a81b-722983c47020",
+  "fields": {
+    "first_name": "Troy",
+    "last_name": "Cloutier"
+  }
+},
+{
+  "model": "core_model.patient",
+  "pk": "88a2a7d1-16f4-4f2f-b635-8adc70478770",
+  "fields": {
+    "first_name": "Harbin",
+    "last_name": "Viens"
+  }
+},
+{
+  "model": "core_model.patient",
+  "pk": "9518b7e1-b185-4d49-aaf5-f19a7c0b3c27",
+  "fields": {
+    "first_name": "Alita",
+    "last_name": "Boucher"
+  }
+},
+{
+  "model": "core_model.patient",
+  "pk": "954086a0-324a-4441-99d0-a61bb17a2bcd",
+  "fields": {
+    "first_name": "Pomeroy",
+    "last_name": "Pirouet"
+  }
+},
+{
+  "model": "core_model.physician",
+  "pk": "b21e20fd-2e5f-48bb-a7bf-c439f882cb1a",
+  "fields": {
+    "first_name": "Annette",
+    "last_name": "Hoenderdos"
+  }
+},
+{
+  "model": "core_model.physician",
+  "pk": "cf59267c-f4a4-4bee-abbb-c02af82dda89",
+  "fields": {
+    "first_name": "Annefloor",
+    "last_name": "Nooren"
+  }
+},
+{
+  "model": "core_model.physician",
+  "pk": "d4feda94-cf49-4580-abe9-21fb02a9d5db",
+  "fields": {
+    "first_name": "Raoul",
+    "last_name": "Karel"
+  }
+},
+{
+  "model": "core_model.physician",
+  "pk": "f7be9652-b0cb-4fc5-ad03-8ea0f20449ba",
+  "fields": {
+    "first_name": "Yoni",
+    "last_name": "Vianen"
+  }
+}
+]

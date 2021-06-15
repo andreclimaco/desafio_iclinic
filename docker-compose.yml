@@ -1,0 +1,129 @@
+version: "3.8"
+
+services:
+    postgres:
+        container_name: postgres
+        hostname: postgres
+        image: postgres:13-alpine
+        environment:
+            - POSTGRES_DB=iclinic
+            - POSTGRES_USER=iclinic-services
+            - POSTGRES_PASSWORD=>G3xCUX=];7@*tC{
+        networks:
+            - main
+        ports:
+            - "54322:5432"
+        volumes:
+            - ./postgresql-data:/var/lib/postgresql/data
+        restart: on-failure
+
+    redis:
+        container_name: redis
+        hostname: redis
+        image: redis:latest
+        networks:
+            - main
+        ports:
+            - "6379:6379"
+        volumes:
+            - ./redis-data:/data
+        restart: on-failure
+
+    rabbitmq:
+        container_name: rabbitmq
+        hostname: rabbitmq
+        image: rabbitmq:latest
+        networks:
+            - main
+        ports:
+            - "5672:5672"
+        restart: on-failure
+
+    appointment-api:
+        container_name: appointment-api
+        hostname: appointment-api
+        image: appointment-api-image
+        depends_on:
+            - postgres
+            - rabbitmq
+            - charge-api
+            - redis
+        build:
+            context: ./appointment
+        networks:
+            - main
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./appointment:/app
+        command: >
+            sh -c "/app/wait-for.sh postgres:5432 && /app/wait-for.sh rabbitmq:5672 && /app/wait-for.sh redis:6379 && python manage.py migrate && python manage.py loaddata api/core_data.json && python manage.py runserver 0.0.0.0:8000"
+        environment:
+            - DB_HOST=postgres
+            - DB_PORT=5432
+            - DB_NAME=iclinic
+            - DB_USER=iclinic-services
+            - DB_PASS=>G3xCUX=];7@*tC{
+            - CHARGE_API=http://charge-api:9000/api/v1/charges/
+            - CELERY_BROKER=pyamqp://guest@rabbitmq:5672
+            - CELERY_RESULT=redis://redis
+        restart: on-failure
+
+    celery-worker:
+        container_name: celery-worker
+        hostname: celery-worker
+        image: appointment-api-image
+        depends_on:
+            - appointment-api
+            - postgres
+            - rabbitmq
+        networks:
+            - main
+        environment:
+            - CELERY_BROKER=pyamqp://guest@rabbitmq:5672
+            - CELERY_RESULT=redis://redis
+            - CHARGE_API=http://charge-api:9000/api/v1/charges/
+        command: sh -c "/app/wait-for.sh rabbitmq:5672 && /app/wait-for.sh appointment-api:8000 && celery -A app worker -l info"
+        restart: on-failure
+
+    flower:
+        container_name: flower
+        hostname: flower
+        image: flower-image
+        build:
+            context: ./flower
+        depends_on:
+            - rabbitmq
+        networks:
+            - main
+        ports:
+            - "5555:5555"
+        command: sh -c "/flower/wait-for.sh rabbitmq:5672 && flower --broker=pyamqp://rabbitmq:5672"
+        restart: on-failure
+
+    charge-api:
+        container_name: charge-api
+        hostname: charge-api
+        image: charge-api-image
+        depends_on:
+            - postgres
+        build:
+            context: ./charge
+        networks:
+            - main
+        ports:
+            - "9000:9000"
+        volumes:
+            - ./charge:/app
+        command: >
+            sh -c "/app/wait-for.sh postgres:5432 && python manage.py migrate && python manage.py runserver 0.0.0.0:9000"
+        environment:
+            - DB_HOST=postgres
+            - DB_PORT=5432
+            - DB_NAME=iclinic
+            - DB_USER=iclinic-services
+            - DB_PASS=>G3xCUX=];7@*tC{
+        restart: on-failure
+
+networks:
+    main:
